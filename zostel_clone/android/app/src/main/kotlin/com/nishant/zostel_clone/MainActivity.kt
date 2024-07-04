@@ -1,4 +1,4 @@
-package com.example.zostel_clone
+package com.nishant.zostel_clone
 
 import io.flutter.embedding.android.FlutterActivity
 
