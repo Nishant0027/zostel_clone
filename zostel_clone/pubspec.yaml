@@ -30,6 +30,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  
+  # For MSAL Authentication
+  msal_auth: ^2.0.1
   # flutter pub global activate rename
   # rename setBundleID --value bundle.id.name
   # rename setAppName --value App_Name
