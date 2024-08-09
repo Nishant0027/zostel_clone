@@ -30,6 +30,19 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+        <activity android:name="com.microsoft.identity.client.BrowserTabActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="com.nisahnt.zostel"
+                    android:path="/VzSiQcXRmi2kyjzcA+mYLEtbGVs="
+                    android:scheme="msauth" />
+            </intent-filter>
+        </activity>
     </application>
     <!-- Required to query activities that can process text, see:
          https://developer.android.com/training/package-visibility and
