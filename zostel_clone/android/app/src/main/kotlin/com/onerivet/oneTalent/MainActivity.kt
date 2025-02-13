@@ -1,4 +1,4 @@
-package com.nishant.zostel
+package com.onerivet.oneTalent
 
 import io.flutter.embedding.android.FlutterActivity
 

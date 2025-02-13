@@ -1,6 +1,5 @@
 import 'dart:developer';
 
-import 'package:flutter/material.dart';
 import 'package:msal_auth/msal_auth.dart';
 import 'package:zostel/core/constants/authentication_constants.dart';
 
@@ -38,7 +37,7 @@ class AuthManager {
     try {
       return await msalAuth.acquireToken();
     } catch (e) {
-      debugPrint("Error fetching token: $e");
+      log("Error fetching token: $e");
       return null;
     }
   }
@@ -60,26 +59,11 @@ class AuthManager {
   Future<void> logout() async {
     try {
       MsalAuth msalAuth = await _msalClient();
-
-      // Optionally show a loading indicator here
-      log('Logging out...');
-      await msalAuth.logout().then((_) {
-        log('Logout successful');
-      });
-
-      // Optionally update application state to reflect logout
+      await msalAuth.logout();
     } on MsalException catch (e) {
       log('Msal exception during logout: ${e.errorMessage}');
     } catch (e) {
       log('Unexpected error during logout: ${e.toString()}');
     }
-
-    /* Uncomment if you want to try the alternative logout method */
-    // try {
-    //   MsalAuth? pca = await _msalClient();
-    //   await pca.logout();
-    // } catch (e) {
-    //   log("Error Logging out using alternative method: $e");
-    // }
   }
 }

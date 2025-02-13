@@ -38,7 +38,7 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:host="com.nisahnt.zostel"
+                    android:host="com.onerivet.oneTalent"
                     android:path="/VzSiQcXRmi2kyjzcA+mYLEtbGVs="
                     android:scheme="msauth" />
             </intent-filter>

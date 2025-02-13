@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zostel/config/myapp.dart';
 
 import '../../auth/data/auth_manager.dart';
 
@@ -73,17 +74,14 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Future<void> onLogout(BuildContext context) async {
-    print("Logout called");
-    await AuthManager().logout();
-    // .then((val) {
-    // if (context.mounted) {
-    //   return Navigator.pushReplacement(
-    //       context,
-    //       MaterialPageRoute(
-    //         builder: (context) => const AuthScreen(),
-    //       ));
-    // }
-    // }
-    // );
+    await AuthManager().logout().then((val) {
+      if (context.mounted) {
+        return Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const AuthScreen(),
+            ));
+      }
+    });
   }
 }
